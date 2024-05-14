@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 // Screens
-import SplashScreen from "../screens/SplashScreen";
 import HomeScreen from "../screens/HomeScreen";
 import AboutScreen from "../screens/AboutScreen";
 import CreateNoteScreen from "../screens/CreateNoteScreen";
@@ -23,12 +22,7 @@ const Stack = createNativeStackNavigator();
 function MainContainer() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen
-          name="Splash"
-          component={SplashScreen}
-          options={{ headerShown: false }}
-        />
+      <Stack.Navigator initialRouteName="Main">
         <Stack.Screen
           name="Main"
           component={MainTabNavigator}
@@ -38,6 +32,7 @@ function MainContainer() {
     </NavigationContainer>
   );
 }
+
 
 function MainTabNavigator() {
   return (

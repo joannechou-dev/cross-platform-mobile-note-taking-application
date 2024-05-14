@@ -46,24 +46,33 @@ const SettingsScreen = ({ navigation }) => {
 
   const deleteAccount = async () => {
     const token = await AsyncStorage.getItem("jwtToken");
+    if (!token) {
+      Alert.alert("Error", "Please log in first.");  // 检查本地是否有token，如果没有，直接提醒用户
+      return;
+    }
     fetch("http://192.168.15.37:3000/api/auth/delete", {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to delete the account");
-        return response.json();
-      })
-      .then(() => {
-        AsyncStorage.clear(); // Clear all local storage data
-        navigation.navigate("Home"); // Use navigation to go to the homepage
+      .then((response) => response.json())  // 首先将响应转换为json
+      .then((data) => {
+        if (data.message) {
+          if (data.message === "User deleted successfully") {
+            Alert.alert("Success", data.message); // 显示成功消息
+          } else {
+            throw new Error(data.message); // 抛出后端发来的其他消息
+          }
+        }
       })
       .catch((error) => {
-        Alert.alert("Error", error.message);
+        Alert.alert("Error", error.message); // 显示来自catch或抛出的错误消息
       });
   };
+  
+  
+  
 
   return (
     <View style={styles.container}>
