@@ -9,7 +9,6 @@ This application is designed to provide a simple and efficient interface to help
 - **Note List Display:** Displays a list of all user notes, allowing browsing and access to these notes.
 - **Editing and Updating Notes:** Users can select existing notes to update their content.
 - **Deleting Notes:** Offers a deletion feature, allowing users to remove notes that are no longer needed.
-- **Search Functionality:** Allows users to search for specific notes using keywords.
 - **Settings Functionality:** Allows users to adjust application settings, such as text size, and provides an option to delete the account.
 - **Remote Syncing:** Syncs notes across multiple devices through the user's account.
 - **Display of Open Source License Information:** Shows the open source components and their licenses used in the application on the About page.
