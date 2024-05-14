@@ -18,8 +18,8 @@ const AuthForm = ({ navigation, globalStyles }) => {
   const handleAuthSubmit = (type) => {
     const url =
       type === "register"
-        ? "http://192.168.15.36:3000/api/auth/register"
-        : "http://192.168.15.36:3000/api/auth/login";
+        ? "http://192.168.15.37:3000/api/auth/register"
+        : "http://192.168.15.37:3000/api/auth/login";
     fetch(url, {
       method: "POST",
       headers: {

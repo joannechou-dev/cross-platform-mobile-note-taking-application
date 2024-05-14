@@ -46,7 +46,7 @@ const SettingsScreen = ({ navigation }) => {
 
   const deleteAccount = async () => {
     const token = await AsyncStorage.getItem("jwtToken");
-    fetch("http://192.168.15.36:3000/api/auth/delete", {
+    fetch("http://192.168.15.37:3000/api/auth/delete", {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

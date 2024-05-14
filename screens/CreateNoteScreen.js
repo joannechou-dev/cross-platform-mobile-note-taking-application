@@ -46,8 +46,8 @@ export default function CreateNoteScreen() {
       return;
     }
     const url = editingId
-      ? `http://192.168.15.36:3000/notes/${editingId}`
-      : "http://192.168.15.36:3000/notes";
+      ? `http://192.168.15.37:3000/notes/${editingId}`
+      : "http://192.168.15.37:3000/notes";
     const method = editingId ? "PUT" : "POST";
     const noteContent = editingId ? editingContent : content;
 
@@ -93,7 +93,7 @@ export default function CreateNoteScreen() {
 
   const fetchNotes = () => {
     AsyncStorage.getItem("jwtToken").then((token) => {
-      fetch("http://192.168.15.36:3000/notes", {
+      fetch("http://192.168.15.37:3000/notes", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -111,7 +111,7 @@ export default function CreateNoteScreen() {
 
   const handleDeleteNote = (noteId) => {
     AsyncStorage.getItem("jwtToken").then((token) => {
-      fetch(`http://192.168.15.36:3000/notes/${noteId}`, {
+      fetch(`http://192.168.15.37:3000/notes/${noteId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
