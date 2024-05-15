@@ -11,13 +11,13 @@ const AboutScreen = () => {
       <Header title="Welcome to About Page" />
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Text style={[styles.text, globalStyles.text]}>
-          This app is designed to help you take and organize notes efficiently.
+          This app is designed to help you efficiently take and organize notes.
           Whether for work, study, or personal use, it offers a simple interface
-          to capture and manage your thoughts and ideas. You can categorize
-          notes into different subjects, search for specific notes by keyword,
-          and set reminders for important tasks. The app also allows for
-          seamless syncing across multiple devices, ensuring that your notes are
-          always accessible whenever and wherever you need them.
+          that allows you to easily capture and manage your thoughts and ideas.
+          You can categorize notes into different subjects and maintain these
+          notes through features that allow adding, updating, and deleting. This
+          design ensures that you can conveniently manage your notes content
+          anytime, anywhere.
         </Text>
         <View style={styles.licenseHeader}>
           <Ionicons
@@ -31,10 +31,7 @@ const AboutScreen = () => {
           </Text>
         </View>
         <Text style={[styles.license, globalStyles.text]}>
-          - react-native: MIT License
-        </Text>
-        <Text style={[styles.license, globalStyles.text]}>
-          - react-navigation: MIT License
+          - MIT License
         </Text>
       </ScrollView>
     </View>
